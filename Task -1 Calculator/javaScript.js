@@ -4,7 +4,7 @@ let ValueTodisplay = " ";
 for(item of buttons) {
     item.addEventListener('click', (event) => {
         buttonValue = event.target.innerText;
-       
+        
         switch (buttonValue)
         {
             case '←':
@@ -13,29 +13,23 @@ for(item of buttons) {
                 break;
             
             case '=':
-                try
-                {
-                    display.value = eval(ValueTodisplay);
-                }
-                catch
-                {
+                try {
+                      display.value = eval(ValueTodisplay);
+                } catch {
                     display.value = 'Invalid Expression !';
                 }
             break;
-            
             
             case 'C':
                 ValueTodisplay = " ";
                 display.value = ValueTodisplay;
                 break;
-            
-            
+
             default:
-                 
                 ValueTodisplay = ValueTodisplay + buttonValue;
                 display.value = ValueTodisplay;
                 break;
-               
+                
         }
     })
 }
